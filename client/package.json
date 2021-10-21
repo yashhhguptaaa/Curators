@@ -9,7 +9,8 @@
     "react-dom": "16.11.0",
     "react-router-dom": "^5.3.0",
     "react-scripts": "3.2.0",
-    "web3": "1.2.2"
+    "truffle": "^5.4.15",
+    "web3": "^1.2.2"
   },
   "scripts": {
     "start": "react-scripts start",
