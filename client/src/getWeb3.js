@@ -10,6 +10,9 @@ const getWeb3 = () =>
 
         try {
           // const accounts = await window.ethereum.send("eth_requestAccounts");
+          // const accounts = await window.ethereum.request({
+          //   method: "eth_requestAccounts",
+          // });
           // console.log(accounts);
           // Request account access if needed
           await window.ethereum.enable();
