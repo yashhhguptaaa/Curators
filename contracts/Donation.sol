@@ -1,7 +1,6 @@
 // SPDX-License-Identifier: MIT
-pragma solidity ^0.8.0;
+pragma solidity ^0.8.1;
 
-// import "https://github.com/Uniswap/uniswap-v2-periphery/blob/master/contracts/interfaces/IUniswapV2Router02.sol";
 import "@openzeppelin/contracts/utils/Counters.sol";
 
 library SafeMath {
@@ -43,10 +42,12 @@ contract Donation {
     Counters.Counter public _postsId;
     Counters.Counter private _creatorsId;
 
-    address private DAI = 0x8f3Cf7ad23Cd3CaDbD9735AFf958023239c6A063; // polygon mainnet
+    address private DAI = 0xDD2C1fB2b9c5D5500b8Da6B817504589e9eBe12f; // polygon mainnet
+
     address private UniswapV2Router02 =
         0xa5E0829CaCEd8fFDD4De3c43696c57F7D7A678ff; //polygon mainnet
-    address private WMATIC = 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270; // polygon
+
+    address private WMATIC = 0x0d500B1d8E8eF31E21C99d1Db9A6444d3ADf1270; // polygon mainnet
 
     IUniswapV2Router uniswapRouter = IUniswapV2Router(UniswapV2Router02);
 
@@ -66,8 +67,6 @@ contract Donation {
     }
 
     mapping(uint256 => Post) public idToPost;
-    // mapping(uint256 => Creator) public idToCreator;
-    // mapping(address => Creator) public addressToCreator;
 
     event PostCreated(uint256 postid, address author, string postURI);
 
@@ -98,8 +97,6 @@ contract Donation {
         Post[] memory posts = new Post[](postCount);
 
         for (uint256 i = 0; i < postCount; i++) {
-            // uint256 currentId = idToPost[i + 1].postid;
-            // Post storage currentPost = idToPost[currentId];
             posts[i] = idToPost[i + 1];
         }
         return posts;
