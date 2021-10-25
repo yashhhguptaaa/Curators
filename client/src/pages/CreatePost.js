@@ -54,26 +54,26 @@ function CreatePost() {
     setWeb3();
   }, []);
   return (
-    <div
-      style={{ display: "flex", flexDirection: "column", marginTop: "200px" }}
-    >
-      <input
-        onChange={handleChange}
-        value={formState.title}
-        placeholder="Article Title"
-        name="title"
-        id="input"
-        style={{ padding: "30px" }}
-      />
-      <Yamde
-        name="body"
-        value={formState.body}
-        handler={handleEditor}
-        theme="light"
-      />
-      <button style={{ padding: "30px" }} onClick={handleSubmit}>
-        Post
-      </button>
+    <div>
+      <div style={{ display: "flex", flexDirection: "column", marginBottom:'40px',marginTop: "90px", width:"60vw", marginLeft:"310px" }}>
+        <input
+          onChange={handleChange}
+          value={formState.title}
+          placeholder="Article Title"
+          name="title"
+          id="input"
+          style={{ padding: "30px" }}
+        />
+        <Yamde
+          name="body"
+          value={formState.body}
+          handler={handleEditor}
+          theme="light"
+        />
+        <button style={{ padding: "30px", backgroundColor:"rgb(213, 160, 91)" , color:"white"}} onClick={handleSubmit}>
+          Post Article
+        </button>
+      </div>
     </div>
   );
 }
